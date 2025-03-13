@@ -1,4 +1,3 @@
-version: "3.9"
 services:
   mssql-arm64:
     build:
@@ -21,17 +20,3 @@ services:
       - MSSQL_USER=sa
       - MSSQL_PASSWORD=Passw@rd
       - SQLCMDPASSWORD=Passw@rd # used for sqlcmd
-
-  python-amd64:
-    depends_on:
-      mssql-arm64:
-        condition: service_healthy
-    build:
-      context: ./example
-      dockerfile: Dockerfile.python
-    platform: linux/amd64
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-
-volumes:
-  mssql: null
