@@ -9,3 +9,4 @@ RUN apt-get -y update && apt-get -y install dialog
 ENV ACCEPT_EULA=Y
 RUN apt-get install -y mssql-tools18 unixodbc-dev
 ENV PATH="/opt/mssql-tools18/bin:${PATH}"
+# path modified based on output of `dpkg -L mssql-tools18`
