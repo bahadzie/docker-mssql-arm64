@@ -1,5 +1,6 @@
 services:
   mssql-arm64:
+    container_name: mssql
     build:
       context: .
       dockerfile: Dockerfile
